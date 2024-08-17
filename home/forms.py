@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import UserProfile
 
 class CustomUserCreationForm(UserCreationForm):
-    nickname = forms.CharField(max_length=30)
+    nickname = forms.CharField(max_length = 30)
 
     class Meta:
         model = UserProfile
