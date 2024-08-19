@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'home',
+    'campaigns',
+    'characters',
+    'scenes',
 ]
 
 MIDDLEWARE = [

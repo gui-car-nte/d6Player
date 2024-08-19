@@ -1,3 +1,7 @@
 from django.db import models
+from campaigns.models import Campaign
 
-# Create your models here.
+class Scene(models.Model):
+    campaign = models.ForeignKey(Campaign, on_delete = models.CASCADE)
+    name = models.CharField(max_length = 25)
+    description = models.CharField(max_length = 100)
