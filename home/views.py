@@ -2,8 +2,12 @@ from django.contrib.auth.forms import AuthenticationForm
 from .forms import CustomUserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
+from campaigns.models import Campaign
 
 def home(request):
+    if request.user.is_authenticated:
+        campaigns = Campaign.objects.filter(user = request.user.userprofile)
+        return render(request, 'home/home.html', {'campaigns': campaigns})
     return render(request, 'home/home.html')
 
 def register(request):

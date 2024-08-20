@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class = "container mt-5">
+    <h2>{{ campaign.campaign_name }}</h2>
+    <p>{{ campaign.campaign_description }}</p>
+    <a href = "{% url 'campaigns:create_scene' campaign.user.username campaign.campaign_name %}" class="btn btn-primary">Create New Scene</a>
+    
+    <div class = "mt-4">
+        <h4>Scenes</h4>
+        <div class = "row">
+            {% for scene in scenes %}
+                <div class = "col-md-4">
+                    <div class = "card mb-4">
+                        <div class = "card-body">
+                            <h5 class = "card-title">{{ scene.name }}</h5>
+                            <a href = "#" class = "btn btn-secondary">View Scene</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
