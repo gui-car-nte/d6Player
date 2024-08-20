@@ -2,27 +2,26 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-    <div class="container mt-5">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Your Campaigns</h2>
-            <a href="{% url 'home:create_campaign' %}" class="btn btn-primary">Create New Campaign</a>
-        </div>
-        <div class="row">
-            {% for campaign in campaigns %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ campaign.campaign_name }}</h5>
-                            <p class="card-text">{{ campaign.campaign_description }}</p>
-                            <a href="{% url 'campaigns:campaign_detail' user.username campaign.campaign_name %}" class="btn btn-secondary">View Campaign</a>
-                        </div>
-                    </div>
+<div class="test-container">
+    <h2>Your campaigns</h2>
+    <a href="{% url 'create_campaign' %}" class="btn btn-primary">Create New Campaign</a>
+
+    <div class="row">
+        {% for campaign in user.profile.campaigns.all %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ campaign.campaign_name }}</h5>
+                    <p class="card-text">{{ campaign.description }}</p>
+                    <a href="{% url 'campaign_detail' user.username campaign.campaign_name %}" class = "btn btn-secondary">View Campaign</a>
                 </div>
-            {% endfor %}
+            </div>
         </div>
+        {% endfor %}
     </div>
+</div>
 {% else %}
-    <h3>Log in to create a new campaign!</h3>
+<h3>Log in to create a new campaign!</h3>
 {% endif %}
 {% endblock %}
 

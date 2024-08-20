@@ -21,5 +21,18 @@
             {% endfor %}
         </div>
     </div>
+    <div class="row">
+        {% for character in campaign.character_set.all %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ character.name }}</h5>
+                    <p class="card-text">{{ character.appearance }}</p>
+                    <a href="#" class="btn btn-secondary">View Character</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

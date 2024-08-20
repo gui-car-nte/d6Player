@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ scene.name }}</h2>
+    <p>{{ scene.description }}</p>
+    <p>{{ scene.action_log }}</p>
+
+    <h3>Assigned Characters</h3>
+    <ul>
+        {% for character in scene.character_set.all %}
+        <li>{{ character.name }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
