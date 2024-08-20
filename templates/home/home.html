@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="test-container">
+    <h2>Your campaigns</h2>
+</div>
+{% else %}
+<h1>D6Player</h1>
+<h3>Log in to create a new campaign!</h2>
+{% endif %}
+{% endblock %}
