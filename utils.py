@@ -1,11 +1,15 @@
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
-def get_db_handle(db_name, host, port, username = None, password = None):
-    client = MongoClient(
-        host = host,
-        port = int(port),
-        username = username,
-        password = password
-    )
-    db_handle = client[db_name]
-    return db_handle, client
+load_dotenv()
+
+try:
+    client = MongoClient(os.getenv('DB_URI'))
+    database = client['D6Player']
+    
+except Exception as ex:
+    print("Error connecting to the server: {}".format(ex))
+finally:
+    client.close()
+    print("Connection ended")
