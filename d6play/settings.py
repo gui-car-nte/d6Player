@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'd6play.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd6player',
         'USER': 'postgres',
         'PASSWORD': '1234',
