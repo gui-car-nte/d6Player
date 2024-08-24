@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'd6player',
         'USER': 'postgres',
         'PASSWORD': '1234',
-        'HOST': '/var/run/postgresql',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }

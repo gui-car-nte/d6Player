@@ -6,7 +6,7 @@ from campaigns.models import Campaign
 
 def home(request):
     if request.user.is_authenticated:
-        campaigns = Campaign.objects.filter(user = request.user.userprofile)
+        campaigns = Campaign.objects.filter(user = request.user.id)
         return render(request, 'home/home.html', {'campaigns': campaigns})
     return render(request, 'home/home.html')
 

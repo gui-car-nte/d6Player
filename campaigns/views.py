@@ -16,7 +16,7 @@ def create_campaign(request):
         if form.is_valid():
             campaign_data = form.cleaned_data
             campaign_data['user'] = request.user.username
-            return redirect('home:home')
+            return redirect('home')
     else:
         form = CampaignForm()
     
