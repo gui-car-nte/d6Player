@@ -1,8 +1,32 @@
 from rest_framework import viewsets, permissions
 from home.models import UserProfile
-from .serializers import UserSerializer
+from campaigns.models import Campaign
+from scenes.models import Scene
+from characters.models import Character
+from .serializers import UserSerializer, CampaignSerializer, SceneSerializer, CharacterSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserSerializer
+    permission_classes = [permissions.AllowAny]
+
+
+class CampaignViewSet(viewsets.ModelViewSet):
+    queryset = Campaign.objects.all()
+    serializer_class = CampaignSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return self.queryset.filter(user = self.request.user)
+
+
+class SceneViewSet(viewsets.ModelViewSet):
+    queryset = Scene.objects.all()
+    serializer_class = SceneSerializer
+    permission_classes = [permissions.AllowAny]
+
+
+class CharacterViewSet(viewsets.ModelViewSet):
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
     permission_classes = [permissions.AllowAny]

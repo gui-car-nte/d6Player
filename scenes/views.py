@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SceneForm
-from models import Scene
+from .models import Scene
 from campaigns.models import Campaign
 
 def scene_detail(request, scene_id):
