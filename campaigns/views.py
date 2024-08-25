@@ -15,9 +15,11 @@ def create_campaign(request):
         form = CampaignForm(request.POST)
         if form.is_valid():
             campaign_data = form.cleaned_data
-            campaign_data['user'] = request.user.username
+            campaign_data['user'] = request.user
+            campaign = Campaign(**campaign_data) 
+            campaign.save() 
             return redirect('home')
     else:
         form = CampaignForm()
-    
+
     return render(request, 'campaigns/create_campaign.html', {'form': form})
