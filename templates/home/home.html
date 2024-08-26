@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="test-container">
+    <h2>Your campaigns</h2>
+    <a href="{% url 'campaigns:create_campaign' %}" class="btn btn-primary">Create New Campaign</a>
+    <br></br>
+    <div class="row">
+        {% for campaign in user.campaigns.all %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ campaign.campaign_name }}</h5>
+                    <p class="card-text">{{ campaign.description }}</p>
+                    <a href="{% url 'campaigns:campaign_detail' user.username campaign.campaign_name %}" class = "btn btn-secondary">View Campaign</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<h3>Log in to create a new campaign!</h3>
+{% endif %}
+{% endblock %}
+
