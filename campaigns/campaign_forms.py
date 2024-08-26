@@ -1,5 +1,5 @@
 from django import forms
-from .models import Campaign
+from .campaign_models import Campaign
 
 class CampaignForm(forms.ModelForm):
     class Meta:

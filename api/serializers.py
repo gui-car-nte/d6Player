@@ -1,8 +1,8 @@
 from rest_framework import serializers
 from home.models import UserProfile
-from campaigns.models import Campaign
-from scenes.models import Scene
-from characters.models import Character
+from campaigns.campaign_models import Campaign
+from scenes.scenes_models import Scene
+from characters.character_models import Character
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,6 +1,6 @@
 from django.db import models
-from scenes.models import Scene
-from campaigns.models import Campaign
+from scenes.scenes_models import Scene
+from campaigns.campaign_models import Campaign
 from config import CHARACTER_STATS, POWER_SOURCE_STATS, STATS_RANKS
 
 class Character(models.Model):

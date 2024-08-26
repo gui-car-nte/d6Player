@@ -4,31 +4,32 @@
 <div class = "container mt-5">
     <h2>{{ campaign.campaign_name }}</h2>
     <p>{{ campaign.campaign_description }}</p>
-    <a href = "{% url 'campaigns:create_scene' campaign.user.username campaign.campaign_name %}" class="btn btn-primary">Create New Scene</a>
     
-    <div class = "mt-4">
+    
+    <div class = "row">
         <h4>Scenes</h4>
-        <div class = "row">
+        <div class = "column">
             {% for scene in scenes %}
                 <div class = "col-md-4">
                     <div class = "card mb-4">
                         <div class = "card-body">
                             <h5 class = "card-title">{{ scene.name }}</h5>
-                            <a href = "#" class = "btn btn-secondary">View Scene</a>
+                            
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
-    <div class="row">
-        {% for character in campaign.character_set.all %}
+    <h4>Characters</h4>
+    <div class="column">
+        {% for character in characters.all %}
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ character.name }}</h5>
-                    <p class="card-text">{{ character.appearance }}</p>
-                    <a href="#" class="btn btn-secondary">View Character</a>
+                    <p class="card-text">{{ character.backstory }}</p>
+                    <a href="character" class="btn btn-secondary">View Character</a>
                 </div>
             </div>
         </div>

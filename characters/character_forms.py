@@ -1,5 +1,5 @@
 from django import forms
-from .models import Character
+from .character_models import Character
 
 class CharacterForm(forms.ModelForm):
     class Meta:
