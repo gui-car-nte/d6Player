@@ -1,5 +1,5 @@
 from django import forms
-from .models import Scene
+from .scenes_models import Scene
 
 class SceneForm(forms.ModelForm):
     class Meta:

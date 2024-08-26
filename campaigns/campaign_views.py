@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import CampaignForm
-from .models import Campaign
-from scenes.models import Scene
-from characters.models import Character
+from .campaign_forms import CampaignForm
+from .campaign_models import Campaign
+from scenes.scenes_models import Scene
+from characters.character_models import Character
 from home.models import UserProfile
 
 def campaign_detail(request, username, campaign_name):

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import CharacterForm
-from .models import Character
-from campaigns.models import Campaign
+from .character_forms import CharacterForm
+from .character_models import Character
+from campaigns.campaign_models import Campaign
 
 def character_detail(request, character_id):
     character = get_object_or_404(Character, id = character_id)

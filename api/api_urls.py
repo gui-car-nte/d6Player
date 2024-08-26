@@ -1,5 +1,5 @@
 from rest_framework import routers
-from .views import UserViewSet, CampaignViewSet, SceneViewSet, CharacterViewSet
+from .api_views import UserViewSet, CampaignViewSet, SceneViewSet, CharacterViewSet
 
 app_name = 'api'
 router = routers.DefaultRouter()

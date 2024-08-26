@@ -1,8 +1,8 @@
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import CustomUserCreationForm
+from .home_forms import CustomUserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
-from campaigns.models import Campaign
+from campaigns.campaign_models import Campaign
 
 def home(request):
     if request.user.is_authenticated:
