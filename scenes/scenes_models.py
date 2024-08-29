@@ -6,3 +6,6 @@ class Scene(models.Model):
     name = models.CharField(max_length = 25)
     description = models.CharField(max_length = 75)
     action_log = models.TextField()
+
+    def __str__(self):
+        return self.name

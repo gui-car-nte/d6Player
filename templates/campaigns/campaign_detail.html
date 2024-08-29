@@ -1,20 +1,20 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<div class = "container mt-5">
+<div class="container mt-5">
     <h2>{{ campaign.campaign_name }}</h2>
     <p>{{ campaign.campaign_description }}</p>
-    
-    
-    <div class = "row">
+    <a href="{% url 'campaigns:scenes:create_scene' user.id campaign.id %}" class="btn btn-secondary">Create Scene</a>
+    <a href="{% url 'campaigns:characters:create_character' user.id campaign.id %}" class="btn btn-secondary">Create Character</a>
+    <div class="row">
         <h4>Scenes</h4>
-        <div class = "column">
+        <div class="column">
             {% for scene in scenes %}
-                <div class = "col-md-4">
-                    <div class = "card mb-4">
-                        <div class = "card-body">
-                            <h5 class = "card-title">{{ scene.name }}</h5>
-                            
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ scene.name }}</h5>
+                            <a href="{% url 'campaigns:scenes:scene_detail' user.id campaign.id scene.id %}" class="btn btn-secondary">View Scene</a>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ character.name }}</h5>
                     <p class="card-text">{{ character.backstory }}</p>
-                    <a href="character" class="btn btn-secondary">View Character</a>
+                    <a href="{% url 'campaigns:characters:character_detail' user.id campaign.id character.id %}" class="btn btn-secondary">View Character</a>
                 </div>
             </div>
         </div>

@@ -5,9 +5,9 @@ from scenes.scenes_models import Scene
 from characters.character_models import Character
 from home.models import UserProfile
 
-def campaign_detail(request, username, campaign_name):
-    user = get_object_or_404(UserProfile, username = username)
-    campaign = get_object_or_404(Campaign, user = user, campaign_name = campaign_name)
+def campaign_detail(request, user_id, campaign_id):
+    user = get_object_or_404(UserProfile, id = user_id)
+    campaign = get_object_or_404(Campaign, user = user, id = campaign_id)
     scenes = Scene.objects.filter(campaign = campaign)
     characters = Character.objects.filter(campaign = campaign)
     return render(request, 'campaigns/campaign_detail.html', {'campaign': campaign, 'scenes': scenes, 'characters': characters})
