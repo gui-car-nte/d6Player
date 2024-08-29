@@ -2,10 +2,10 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2>{{ campaign.campaign_name }}</h2>
+    <center><h2>{{ campaign.campaign_name }}</h2>
     <p>{{ campaign.campaign_description }}</p>
-    <a href="{% url 'campaigns:scenes:create_scene' user.id campaign.id %}" class="btn btn-secondary">Create Scene</a>
-    <a href="{% url 'campaigns:characters:create_character' user.id campaign.id %}" class="btn btn-secondary">Create Character</a>
+    <a href="{% url 'campaigns:scenes:create_scene' user.id campaign.id %}" class="btn btn-primary">Create Scene</a>
+    <a href="{% url 'campaigns:characters:create_character' user.id campaign.id %}" class="btn btn-primary">Create Character</a></center><br></br>
     <div class="row">
         <h4>Scenes</h4>
         <div class="column">
