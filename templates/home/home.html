@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ campaign.campaign_name }}</h5>
                     <p class="card-text">{{ campaign.description }}</p>
-                    <a href="{% url 'campaigns:campaign_detail' user.username campaign.campaign_name %}" class = "btn btn-secondary">View Campaign</a>
+                    <a href="{% url 'campaigns:campaign_detail' user.id campaign.id %}" class = "btn btn-secondary">View Campaign</a>
                 </div>
             </div>
         </div>
