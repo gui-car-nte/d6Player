@@ -9,6 +9,8 @@ class Character(models.Model):
     VAMPIRE = "Vampire"
     SPIN_MASTER = "Spin Master"
     ARMED_PHENOMENON = "Armed Phenomenon"
+    CYBORG = "Cyborg"
+    MULTIPLE_POWER_SOURCES = "Multiple Power Sources"
     NO_POWER_SOURCE = "No Power Source"
 
     CHARACTER_POWER_SOURCES = [
@@ -17,6 +19,8 @@ class Character(models.Model):
         (VAMPIRE, "Vampire"),
         (SPIN_MASTER, "Spin Master"),
         (ARMED_PHENOMENON, "Armed Phenomenon"),
+        (CYBORG, "Cyborg"),
+        (MULTIPLE_POWER_SOURCES, "Multiple Power Sources"),
         (NO_POWER_SOURCE, "No Power Source"),
     ]
 
