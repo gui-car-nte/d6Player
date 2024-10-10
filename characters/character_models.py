@@ -1,5 +1,4 @@
 from django.db import models
-from scenes.scenes_models import Scene
 from campaigns.campaign_models import Campaign
 from config import CHARACTER_STATS, POWER_SOURCE_STATS, STATS_RANKS
 
@@ -24,7 +23,6 @@ class Character(models.Model):
         (NO_POWER_SOURCE, "No Power Source"),
     ]
 
-    scene = models.ManyToManyField(Scene)
     campaign = models.ForeignKey(Campaign, on_delete = models.CASCADE)
     name = models.CharField(max_length = 30, blank = False)
     appearance = models.CharField(max_length = 100, blank = True)
@@ -34,6 +32,8 @@ class Character(models.Model):
     power_source_design = models.CharField(max_length = 100, blank = True)
     power_source_abilities = models.CharField(max_length = 200, blank = True)
     
+    def __str__(self):
+        return self.name
 
 class CharacterStat(models.Model):
     character = models.ForeignKey(Character, on_delete = models.CASCADE, related_name = 'user_stats')
