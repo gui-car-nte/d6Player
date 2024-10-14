@@ -27,7 +27,7 @@ def create_scene(request, user_id, campaign_id):
             scene = form.save(commit = False)
             scene.campaign = campaign
             scene.save()
-            return redirect(f'http://127.0.0.1:8000/campaigns/{user_id}/{campaign_id}/')
+            return redirect(f'http://127.0.0.1:8000/campaigns/{user_id}/{campaign_id}/') # TODO replace hard-coded url
     else:
         form = SceneForm()
     return render(request, 'scenes/create_scene.html', {'form': form})

@@ -15,7 +15,7 @@ def create_character(request, user_id, campaign_id):
             character = form.save(commit = False)
             character.campaign = campaign
             character.save()
-            return redirect(f'http://127.0.0.1:8000/campaigns/{user_id}/{campaign_id}/')
+            return redirect(f'http://127.0.0.1:8000/campaigns/{user_id}/{campaign_id}/') # TODO replace hard-coded url
     else:
         form = CharacterForm()
     return render(request, 'characters/create_character.html', {'form': form})
