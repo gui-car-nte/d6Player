@@ -1,13 +1,14 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<div class="container">
+</br><input type = button value = "Back to Campaign" onClick = "javascript:history.go(-1);" class = "btn btn-secondary"></br></br>
+<div class = "container">
     <h2>{{ scene.name }}</h2>
     <p>{{ scene.description }}</p>
-    <form method="POST">
+    <form method = "POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Update log</button>
+        <button type = "submit" class = "btn btn-secondary">Update log</button>
     </form>
 
     <h3>Assigned Characters</h3>
